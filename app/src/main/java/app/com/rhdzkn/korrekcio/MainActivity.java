@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
     public EditText text_RENDPT, text_AENDPT, text_ARAMPEO, text_ARAMPEU, text_RRAMPEO, text_RRAMPEU, text_M12Y, text_M12Z;
     public TextView text_RENDPT_ROT,text_AENDPT_ROT, text_ARAMPEO_ROT, text_ARAMPEU_ROT, text_RRAMPEO_ROT, text_RRAMPEU_ROT, text_M12Y_Y, text_M12Z_X;
     public float value_RENDPT, value_AENDPT, value_ARAMPEO, value_ARAMPEU, value_RRAMPEO, value_RRAMPEU, value_M12Y, value_M12Z;
+    public TextView ko_L1, ko_L2, ko_L3, ko_R1, ko_R2, ko_R3, ko_RENDPT, ko_AENDPT, ko_ARAMPEO, ko_ARAMPEU, ko_RRAMPEO, ko_RRAMPEU, ko_M12Y, ko_M12Z;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,6 +211,22 @@ public class MainActivity extends ActionBarActivity {
         text_RRAMPEU = (EditText) findViewById(R.id.edit_RRAMPEU);
         text_M12Y = (EditText) findViewById(R.id.edit_M12Y);
         text_M12Z = (EditText) findViewById(R.id.edit_M12Z);
+
+        ko_L1 = (TextView) findViewById(R.id.ko_L1);
+        ko_L2 = (TextView) findViewById(R.id.ko_L2);
+        ko_L3 = (TextView) findViewById(R.id.ko_L3);
+        ko_R1 = (TextView) findViewById(R.id.ko_R1);
+        ko_R2 = (TextView) findViewById(R.id.ko_R2);
+        ko_R3 = (TextView) findViewById(R.id.ko_R3);
+        ko_RENDPT = (TextView) findViewById(R.id.ko_RENDPT);
+        ko_AENDPT = (TextView) findViewById(R.id.ko_AENDPT);
+        ko_ARAMPEO = (TextView) findViewById(R.id.ko_ARAMPEO);
+        ko_ARAMPEU = (TextView) findViewById(R.id.ko_ARAMPEU);
+        ko_RRAMPEO = (TextView) findViewById(R.id.ko_RRAMPEO);
+        ko_RRAMPEU = (TextView) findViewById(R.id.ko_RRAMPEU);
+        ko_M12Y = (TextView) findViewById(R.id.ko_M12Y);
+        ko_M12Z = (TextView) findViewById(R.id.ko_M12Z);
+
         text_RENDPT_ROT = (TextView) findViewById(R.id.text_RENDPT_ROT);
         text_AENDPT_ROT = (TextView) findViewById(R.id.text_AENDPT_ROT);
         text_ARAMPEO_ROT = (TextView) findViewById(R.id.text_ARAMPEO_ROT);
@@ -235,8 +252,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_RENDPT = Float.parseFloat(text_RENDPT.getText().toString());
                 }
-                value_RENDPT /= 1000;
-                text_RENDPT_ROT.setText(String.valueOf(String.format("%.03f", value_RENDPT)));
+                text_RENDPT_ROT.setText(String.valueOf(String.format("%.03f", value_RENDPT / 1000)));
+                ko_RENDPT.setText(String.valueOf(String.format("%.03f", (value_RENDPT / 1000) - Float.valueOf(String.format("%.03f", Float.parseFloat(text_RENDPT_ROT.getText().toString()))))));
             }
 
             @Override
@@ -260,8 +277,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_AENDPT = Float.parseFloat(text_AENDPT.getText().toString());
                 }
-                value_AENDPT = 0 - (value_AENDPT / 1000);
-                text_AENDPT_ROT.setText(String.valueOf(String.format("%.03f", value_AENDPT)));
+                text_AENDPT_ROT.setText(String.valueOf(String.format("%.03f", 0 - (value_AENDPT / 1000))));
+                ko_AENDPT.setText(String.valueOf(String.format("%.03f", (value_AENDPT / 1000) + Float.valueOf(String.format("%.03f", Float.parseFloat(text_AENDPT_ROT.getText().toString()))))));
             }
 
             @Override
@@ -285,8 +302,9 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_ARAMPEO = Float.parseFloat(text_ARAMPEO.getText().toString());
                 }
-                value_ARAMPEO = 0 - (value_ARAMPEO / 1000) * 2;
-                text_ARAMPEO_ROT.setText(String.valueOf(String.format("%.03f", value_ARAMPEO)));
+
+                text_ARAMPEO_ROT.setText(String.valueOf(String.format("%.03f", 0 - (value_ARAMPEO / 1000) * 2)));
+                ko_ARAMPEO.setText(String.valueOf(String.format("%.03f", (value_ARAMPEO / 1000) + (Float.valueOf(String.format("%.03f", Float.parseFloat(text_ARAMPEO_ROT.getText().toString())))) / 2 )));
             }
 
             @Override
@@ -310,8 +328,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_ARAMPEU = Float.parseFloat(text_ARAMPEU.getText().toString());
                 }
-                value_ARAMPEU = 0 - (value_ARAMPEU / 1000) * 2;
-                text_ARAMPEU_ROT.setText(String.valueOf(String.format("%.03f", value_ARAMPEU)));
+                text_ARAMPEU_ROT.setText(String.valueOf(String.format("%.03f", 0 - (value_ARAMPEU / 1000) * 2)));
+                ko_ARAMPEU.setText(String.valueOf(String.format("%.03f", (value_ARAMPEU / 1000) + (Float.valueOf(String.format("%.03f", Float.parseFloat(text_ARAMPEU_ROT.getText().toString())))) / 2 )));
             }
 
             @Override
@@ -335,8 +353,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_RRAMPEO = Float.parseFloat(text_RRAMPEO.getText().toString());
                 }
-                value_RRAMPEO = (value_RRAMPEO / 1000) * 2;
-                text_RRAMPEO_ROT.setText(String.valueOf(String.format("%.03f", value_RRAMPEO)));
+                text_RRAMPEO_ROT.setText(String.valueOf(String.format("%.03f", (value_RRAMPEO / 1000) * 2)));
+                ko_RRAMPEO.setText(String.valueOf(String.format("%.03f", (value_ARAMPEO / 1000) - (Float.valueOf(String.format("%.03f", Float.parseFloat(text_RRAMPEO_ROT.getText().toString())))) / 2 )));
             }
 
             @Override
@@ -360,8 +378,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_RRAMPEU = Float.parseFloat(text_RRAMPEU.getText().toString());
                 }
-                value_RRAMPEU = (value_RRAMPEU / 1000) * 2;
-                text_RRAMPEU_ROT.setText(String.valueOf(String.format("%.03f", value_RRAMPEU)));
+                text_RRAMPEU_ROT.setText(String.valueOf(String.format("%.03f", (value_RRAMPEU / 1000) * 2)));
+                ko_RRAMPEU.setText(String.valueOf(String.format("%.03f", (value_RRAMPEU / 1000) - (Float.valueOf(String.format("%.03f", Float.parseFloat(text_RRAMPEU_ROT.getText().toString())))) / 2 )));
             }
 
             @Override
@@ -385,8 +403,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_M12Y= Float.parseFloat(text_M12Y.getText().toString());
                 }
-                value_M12Y /= 1000;
-                text_M12Y_Y.setText(String.valueOf(String.format("%.03f", value_M12Y)));
+                text_M12Y_Y.setText(String.valueOf(String.format("%.03f", value_M12Y / 1000)));
+                ko_M12Y.setText(String.valueOf(String.format("%.03f", (value_M12Y / 1000) - (Float.valueOf(String.format("%.03f", Float.parseFloat(text_M12Y_Y.getText().toString())))))));
             }
 
             @Override
@@ -410,8 +428,8 @@ public class MainActivity extends ActionBarActivity {
                 {
                     value_M12Z= Float.parseFloat(text_M12Z.getText().toString());
                 }
-                value_M12Z = 0 - (value_M12Z / 1000);
-                text_M12Z_X.setText(String.valueOf(String.format("%.03f", value_M12Z)));
+                text_M12Z_X.setText(String.valueOf(String.format("%.03f", 0 - (value_M12Z / 1000))));
+                ko_M12Z.setText(String.valueOf(String.format("%.03f", (value_M12Z / 1000) + (Float.valueOf(String.format("%.03f", Float.parseFloat(text_M12Z_X.getText().toString())))))));
             }
 
             @Override
@@ -512,9 +530,15 @@ public class MainActivity extends ActionBarActivity {
         }
         value_Elforgatott_atlag /= 6;
         text_Elforgatott_atlag.setText(String.valueOf(String.format("%.03f", value_Elforgatott_atlag)));
-        value_TRANS = (0 + value_Elforgatott_atlag) * 2;
+        value_TRANS = (0 + value_Elforgatott_atlag);
         text_TRANS.setText(String.valueOf(String.format("%.03f", value_TRANS)));
 
+        ko_L1.setText(String.valueOf(String.format("%.03f", value_Elforgatott_bal[0] - value_TRANS)));
+        ko_L2.setText(String.valueOf(String.format("%.03f", value_Elforgatott_bal[1] - value_TRANS)));
+        ko_L3.setText(String.valueOf(String.format("%.03f", value_Elforgatott_bal[2] - value_TRANS)));
+        ko_R1.setText(String.valueOf(String.format("%.03f", value_Elforgatott_jobb[0] - value_TRANS)));
+        ko_R2.setText(String.valueOf(String.format("%.03f", value_Elforgatott_jobb[1] - value_TRANS)));
+        ko_R3.setText(String.valueOf(String.format("%.03f", value_Elforgatott_jobb[2] - value_TRANS)));
     }
 
 }
