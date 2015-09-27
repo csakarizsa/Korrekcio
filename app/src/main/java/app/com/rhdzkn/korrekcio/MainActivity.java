@@ -25,6 +25,8 @@ public class MainActivity extends ActionBarActivity {
     public float value_RENDPT, value_AENDPT, value_ARAMPEO, value_ARAMPEU, value_RRAMPEO, value_RRAMPEU, value_M12Y, value_M12Z;
     public TextView ko_L1, ko_L2, ko_L3, ko_R1, ko_R2, ko_R3, ko_RENDPT, ko_AENDPT, ko_ARAMPEO, ko_ARAMPEU, ko_RRAMPEO, ko_RRAMPEU, ko_M12Y, ko_M12Z;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -456,9 +458,43 @@ public class MainActivity extends ActionBarActivity {
             killApplication();
             return true;
         }
+        if (id == R.id.action_zero) {
+            doZero();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
+    public void doZero()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            value_L[i] = 0.000f;
+            value_R[i] = 0.000f;
+        }
+        text_L1.setText("");
+        text_L2.setText("");
+        text_L3.setText("");
+        text_R1.setText("");
+        text_R2.setText("");
+        text_R3.setText("");
+        text_RENDPT.setText("");
+        value_RENDPT = 0.000f;
+        text_AENDPT.setText("");
+        value_AENDPT = 0.000f;
+        text_ARAMPEO.setText("");
+        value_ARAMPEO = 0.000f;
+        text_ARAMPEU.setText("");
+        value_ARAMPEU = 0.000f;
+        text_RRAMPEO.setText("");
+        value_RRAMPEO = 0.000f;
+        text_RRAMPEU.setText("");
+        value_RRAMPEU = 0.000f;
+        text_M12Y.setText("");
+        value_M12Y = 0.000f;
+        text_M12Z.setText("");
+        value_M12Z = 0.000f;
+    }
     public void killApplication()
     {
         android.os.Process.killProcess(android.os.Process.myPid());

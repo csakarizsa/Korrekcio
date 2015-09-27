@@ -7,4 +7,9 @@
         rhdzkn:showAsAction="always"
         android:icon="@drawable/ic_quit"
         android:title="Quit" />
+    <item
+        android:id="@+id/action_zero"
+        rhdzkn:showAsAction="always"
+        android:icon="@mipmap/ic_refresh"
+        android:title="Refresh" />
 </menu>

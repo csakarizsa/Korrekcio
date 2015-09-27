@@ -1,30 +1,24 @@
 <resources>
-    <string name="app_name">Korrekcio</string>
-
+    <string name="app_name">Korrekció</string>
     <string name="text_L1">L1</string>
     <string name="text_L2">L2</string>
     <string name="text_L3">L3</string>
     <string name="text_R1">R1</string>
     <string name="text_R2">R2</string>
     <string name="text_R3">R3</string>
-
     <string name="text_defaultZero">0.000</string>
-
     <string name="text_ROT">ROT</string>
     <string name="text_TRANS">TRANS</string>
-
     <string name="text_RENDPT">R_END_PT</string>
     <string name="text_AENDPT">A_END_PT</string>
-
     <string name="text_ARAMPEO">A_RAMPE_O</string>
     <string name="text_ARAMPEU">A_RAMPE_U</string>
-
     <string name="text_RRAMPEO">R_RAMPE_O</string>
     <string name="text_RRAMPEU">R_RAMPE_U</string>
-
     <string name="text_M12Y">M12 - Y</string>
     <string name="text_M12Z">M12 - Z</string>
-
     <string name="text_X">X</string>
     <string name="text_Y">Y</string>
+    <string name="text_RZ">Készítette: Richárd Zákány</string>
+    <string name="text_AB">Paraméterezte: Árpád Brecska</string>
 </resources>

@@ -51,7 +51,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp">
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6">
                         <requestFocus/>
                     </EditText>
                     <TextView
@@ -97,7 +100,10 @@
                         android:textAlignment="gravity"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -151,7 +157,9 @@
                         android:numeric="integer"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -228,7 +236,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -280,7 +291,10 @@
                         android:textAlignment="gravity"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -335,7 +349,9 @@
                         android:numeric="integer"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -357,7 +373,8 @@
                     android:layout_gravity="center"
                     android:baselineAligned="false"
                     android:visibility="gone"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:focusable="true">
                     <TextView
                         android:layout_weight="5"
                         android:layout_height="match_parent"
@@ -365,7 +382,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorYellow"
                         android:id="@+id/text_R_atlag"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                 </TableRow>
                 <!-- Eredeti átlag sor: -->
                 <TableRow
@@ -377,7 +396,8 @@
                     android:layout_gravity="center"
                     android:baselineAligned="false"
                     android:visibility="gone"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:focusable="true">
                     <TextView
                         android:layout_weight="5"
                         android:layout_height="match_parent"
@@ -385,7 +405,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_E_atlag"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                 </TableRow>
                 <!-- Elforgatott 1. sor: -->
                 <TableRow
@@ -397,7 +419,8 @@
                     android:layout_gravity="center"
                     android:baselineAligned="false"
                     android:visibility="gone"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:focusable="true">
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -405,7 +428,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_L1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -413,7 +438,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_R1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                 </TableRow>
                 <!-- Elforgatott 2. sor: -->
                 <TableRow
@@ -425,7 +452,8 @@
                     android:layout_gravity="center"
                     android:baselineAligned="false"
                     android:visibility="gone"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:focusable="true">
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -433,7 +461,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_L2"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -441,7 +471,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_R2"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                 </TableRow>
                 <!-- Elforgatott 3. sor: -->
                 <TableRow
@@ -453,7 +485,8 @@
                     android:layout_gravity="center"
                     android:baselineAligned="false"
                     android:visibility="gone"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:focusable="true">
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -461,7 +494,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_L3"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -469,7 +504,9 @@
                         android:layout_gravity="center_vertical"
                         android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_R3"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:focusable="true" />
                 </TableRow>
                 <!-- Elforgatott átlag sor: -->
                 <TableRow
@@ -481,15 +518,18 @@
                     android:layout_gravity="center"
                     android:baselineAligned="false"
                     android:visibility="gone"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:focusable="true">
                     <TextView
-                        android:layout_weight="5"
+                        android:layout_weight="0"
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
                         android:layout_gravity="center_vertical"
-                        android:background="@color/colorOrange"
                         android:id="@+id/text_Elforgatott_atlag"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:password="true"
+                        android:focusable="true" />
                 </TableRow>
                 <!-- R_END_PT sor: -->
                 <TableRow
@@ -522,7 +562,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -581,7 +624,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -640,7 +686,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -699,7 +748,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -758,7 +810,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -817,7 +872,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -876,7 +934,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -935,7 +996,10 @@
                         android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
@@ -963,6 +1027,43 @@
                         android:gravity="center"
                         android:textStyle="bold" />
 
+                </TableRow>
+                <TableRow
+                    android:weightSum="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TableRowRZ"
+                    android:minHeight="30dp"
+                    android:layout_gravity="center"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:text="@string/text_RZ"
+                        android:id="@+id/text_RZ"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </TableRow>
+                <TableRow
+                    android:weightSum="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TableRowBA"
+                    android:minHeight="30dp"
+                    android:layout_gravity="center"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="1dp">
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:text="@string/text_AB"
+                        android:id="@+id/text_BA"
+                        android:gravity="center"
+                        android:textStyle="bold" />
                 </TableRow>
             </TableLayout>
         </ScrollView>
