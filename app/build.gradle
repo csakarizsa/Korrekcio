@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+    }
     compileSdkVersion 17
     buildToolsVersion "23.0.1"
-
     defaultConfig {
         applicationId "app.com.rhdzkn.korrekcio"
         minSdkVersion 17
-        targetSdkVersion 17
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }

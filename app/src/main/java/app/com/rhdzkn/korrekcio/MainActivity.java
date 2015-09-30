@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class MainActivity extends ActionBarActivity {
 
     // Változók inicializálása
@@ -25,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
     public float value_RENDPT, value_AENDPT, value_ARAMPEO, value_ARAMPEU, value_RRAMPEO, value_RRAMPEU, value_M12Y, value_M12Z;
     public TextView ko_L1, ko_L2, ko_L3, ko_R1, ko_R2, ko_R3, ko_RENDPT, ko_AENDPT, ko_ARAMPEO, ko_ARAMPEU, ko_RRAMPEO, ko_RRAMPEU, ko_M12Y, ko_M12Z;
 
-
+    public String f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,31 +241,6 @@ public class MainActivity extends ActionBarActivity {
         text_M12Y_Y = (TextView) findViewById(R.id.text_M12Y_Y);
         text_M12Z_X = (TextView) findViewById(R.id.text_M12Z_X);
 
-        text_RENDPT.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (text_RENDPT.length() == 0 || text_RENDPT.getText().toString().equals("-") || text_RENDPT.getText().toString().equals("0"))
-                {
-                    value_RENDPT = 0.000f;
-                }
-                else
-                {
-                    value_RENDPT = Float.parseFloat(text_RENDPT.getText().toString());
-                }
-                text_RENDPT_ROT.setText(String.valueOf(String.format("%.03f", value_RENDPT / 1000)));
-                ko_RENDPT.setText(String.valueOf(String.format("%.03f", (value_RENDPT / 1000) - Float.valueOf(String.format("%.03f", Float.parseFloat(text_RENDPT_ROT.getText().toString()))))));
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
         text_AENDPT.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -280,7 +258,37 @@ public class MainActivity extends ActionBarActivity {
                     value_AENDPT = Float.parseFloat(text_AENDPT.getText().toString());
                 }
                 text_AENDPT_ROT.setText(String.valueOf(String.format("%.03f", 0 - (value_AENDPT / 1000))));
-                ko_AENDPT.setText(String.valueOf(String.format("%.03f", (value_AENDPT / 1000) + Float.valueOf(String.format("%.03f", Float.parseFloat(text_AENDPT_ROT.getText().toString()))))));
+                f = text_AENDPT_ROT.getText().toString();
+                f = f.replace(",",".");
+                ko_AENDPT.setText(String.format("%.03f", (value_AENDPT / 1000) + Float.parseFloat(f)));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        text_RENDPT.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (text_RENDPT.length() == 0 || text_RENDPT.getText().toString().equals("-") || text_RENDPT.getText().toString().equals("0"))
+                {
+                    value_RENDPT = 0.000f;
+                }
+                else
+                {
+                    value_RENDPT = Float.parseFloat(text_RENDPT.getText().toString());
+                }
+                text_RENDPT_ROT.setText(String.valueOf(String.format("%.03f", value_RENDPT / 1000)));
+
+                f = text_RENDPT_ROT.getText().toString();
+                f = f.replace(",",".");
+                ko_RENDPT.setText(String.format("%.03f", (value_RENDPT / 1000) - Float.parseFloat(f)));
             }
 
             @Override
@@ -306,7 +314,9 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 text_ARAMPEO_ROT.setText(String.valueOf(String.format("%.03f", 0 - (value_ARAMPEO / 1000) * 2)));
-                ko_ARAMPEO.setText(String.valueOf(String.format("%.03f", (value_ARAMPEO / 1000) + (Float.valueOf(String.format("%.03f", Float.parseFloat(text_ARAMPEO_ROT.getText().toString())))) / 2 )));
+                f = text_ARAMPEO_ROT.getText().toString();
+                f = f.replace(",",".");
+                ko_ARAMPEO.setText(String.format("%.03f", (value_ARAMPEO / 1000) + (Float.parseFloat(f) / 2)));
             }
 
             @Override
@@ -331,7 +341,9 @@ public class MainActivity extends ActionBarActivity {
                     value_ARAMPEU = Float.parseFloat(text_ARAMPEU.getText().toString());
                 }
                 text_ARAMPEU_ROT.setText(String.valueOf(String.format("%.03f", 0 - (value_ARAMPEU / 1000) * 2)));
-                ko_ARAMPEU.setText(String.valueOf(String.format("%.03f", (value_ARAMPEU / 1000) + (Float.valueOf(String.format("%.03f", Float.parseFloat(text_ARAMPEU_ROT.getText().toString())))) / 2 )));
+                f = text_ARAMPEU_ROT.getText().toString();
+                f = f.replace(",",".");
+                ko_ARAMPEU.setText(String.format("%.03f", (value_ARAMPEU / 1000) + (Float.parseFloat(f) / 2)));
             }
 
             @Override
@@ -356,7 +368,9 @@ public class MainActivity extends ActionBarActivity {
                     value_RRAMPEO = Float.parseFloat(text_RRAMPEO.getText().toString());
                 }
                 text_RRAMPEO_ROT.setText(String.valueOf(String.format("%.03f", (value_RRAMPEO / 1000) * 2)));
-                ko_RRAMPEO.setText(String.valueOf(String.format("%.03f", (value_ARAMPEO / 1000) - (Float.valueOf(String.format("%.03f", Float.parseFloat(text_RRAMPEO_ROT.getText().toString())))) / 2 )));
+                f = text_RRAMPEO_ROT.getText().toString();
+                f = f.replace(",",".");
+                ko_RRAMPEO.setText(String.format("%.03f", (value_ARAMPEO / 1000) - (Float.parseFloat(f) / 2)));
             }
 
             @Override
@@ -381,7 +395,9 @@ public class MainActivity extends ActionBarActivity {
                     value_RRAMPEU = Float.parseFloat(text_RRAMPEU.getText().toString());
                 }
                 text_RRAMPEU_ROT.setText(String.valueOf(String.format("%.03f", (value_RRAMPEU / 1000) * 2)));
-                ko_RRAMPEU.setText(String.valueOf(String.format("%.03f", (value_RRAMPEU / 1000) - (Float.valueOf(String.format("%.03f", Float.parseFloat(text_RRAMPEU_ROT.getText().toString())))) / 2 )));
+                f = text_RRAMPEU_ROT.getText().toString();
+                f = f.replace(",",".");
+                ko_RRAMPEU.setText(String.format("%.03f", (value_RRAMPEU / 1000) - (Float.parseFloat(f) / 2)));
             }
 
             @Override
@@ -406,7 +422,9 @@ public class MainActivity extends ActionBarActivity {
                     value_M12Y= Float.parseFloat(text_M12Y.getText().toString());
                 }
                 text_M12Y_Y.setText(String.valueOf(String.format("%.03f", value_M12Y / 1000)));
-                ko_M12Y.setText(String.valueOf(String.format("%.03f", (value_M12Y / 1000) - (Float.valueOf(String.format("%.03f", Float.parseFloat(text_M12Y_Y.getText().toString())))))));
+                f = text_M12Y_Y.getText().toString();
+                f = f.replace(",",".");
+                ko_M12Y.setText(String.format("%.03f", (value_M12Y / 1000) - Float.parseFloat(f)));
             }
 
             @Override
@@ -431,7 +449,9 @@ public class MainActivity extends ActionBarActivity {
                     value_M12Z= Float.parseFloat(text_M12Z.getText().toString());
                 }
                 text_M12Z_X.setText(String.valueOf(String.format("%.03f", 0 - (value_M12Z / 1000))));
-                ko_M12Z.setText(String.valueOf(String.format("%.03f", (value_M12Z / 1000) + (Float.valueOf(String.format("%.03f", Float.parseFloat(text_M12Z_X.getText().toString())))))));
+                f = text_M12Z_X.getText().toString();
+                f = f.replace(",",".");
+                ko_M12Z.setText(String.format("%.03f", (value_M12Z / 1000) + Float.parseFloat(f)));
             }
 
             @Override
@@ -566,15 +586,15 @@ public class MainActivity extends ActionBarActivity {
         }
         value_Elforgatott_atlag /= 6;
         text_Elforgatott_atlag.setText(String.valueOf(String.format("%.03f", value_Elforgatott_atlag)));
-        value_TRANS = (0 + value_Elforgatott_atlag);
+        value_TRANS = (0 + value_Elforgatott_atlag) * 2;
         text_TRANS.setText(String.valueOf(String.format("%.03f", value_TRANS)));
 
-        ko_L1.setText(String.valueOf(String.format("%.03f", value_Elforgatott_bal[0] - value_TRANS)));
-        ko_L2.setText(String.valueOf(String.format("%.03f", value_Elforgatott_bal[1] - value_TRANS)));
-        ko_L3.setText(String.valueOf(String.format("%.03f", value_Elforgatott_bal[2] - value_TRANS)));
-        ko_R1.setText(String.valueOf(String.format("%.03f", value_Elforgatott_jobb[0] - value_TRANS)));
-        ko_R2.setText(String.valueOf(String.format("%.03f", value_Elforgatott_jobb[1] - value_TRANS)));
-        ko_R3.setText(String.valueOf(String.format("%.03f", value_Elforgatott_jobb[2] - value_TRANS)));
+        ko_L1.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_bal[0] - value_TRANS) / 2)));
+        ko_L2.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_bal[1] - value_TRANS) / 2)));
+        ko_L3.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_bal[2] - value_TRANS) / 2)));
+        ko_R1.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_jobb[0] - value_TRANS) / 2)));
+        ko_R2.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_jobb[1] - value_TRANS) / 2)));
+        ko_R3.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_jobb[2] - value_TRANS) / 2)));
     }
 
 }

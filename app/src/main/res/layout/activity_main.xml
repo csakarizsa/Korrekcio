@@ -122,7 +122,7 @@
                         android:textAlignment="gravity"
                         android:background="@color/colorYellow"
                         android:id="@+id/text_ROT_R2"
-                        android:text="@string/text_ROT"
+                        android:text="@string/text_TRANS"
                         android:gravity="center" />
                 </TableRow>
                 <!-- 3. sor: -->
@@ -175,7 +175,7 @@
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
                         android:background="@color/colorYellow"
-                        android:id="@+id/text_ROT_VAL"
+                        android:id="@+id/text_TRANS_VAL"
                         android:text="@string/text_defaultZero"
                         android:gravity="center"
                         android:textStyle="bold" />
@@ -257,7 +257,7 @@
                         android:layout_weight="2"
                         android:background="@color/colorOrange"
                         android:textAlignment="inherit"
-                        android:text="@string/text_TRANS"
+                        android:text="@string/text_ROT"
                         android:gravity="center" />
                 </TableRow>
                 <!-- 5. sor: -->
@@ -312,7 +312,7 @@
                         android:layout_width="0dp"
                         android:textAlignment="gravity"
                         android:background="@color/colorOrange"
-                        android:id="@+id/text_TRANS_VAL"
+                        android:id="@+id/text_ROT_VAL"
                         android:text="@string/text_defaultZero"
                         android:gravity="center"
                         android:textStyle="bold" />
@@ -528,70 +528,7 @@
                         android:id="@+id/text_Elforgatott_atlag"
                         android:gravity="center"
                         android:visibility="gone"
-                        android:password="true"
                         android:focusable="true" />
-                </TableRow>
-                <!-- R_END_PT sor: -->
-                <TableRow
-                    android:weightSum="6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/TableRow_RENDPT"
-                    android:minHeight="30dp"
-                    android:layout_gravity="center"
-                    android:baselineAligned="false"
-                    android:layout_marginBottom="1dp">
-                    <TextView
-                        android:layout_weight="2"
-                        android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@color/colorGrey"
-                        android:text="@string/text_RENDPT"
-                        android:gravity="center"
-                        android:textColor="#CCCCCC" />
-                    <EditText
-                        android:layout_height="fill_parent"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:textSize="12dp"
-                        android:background="@color/colorWhite"
-                        android:id="@+id/edit_RENDPT"
-                        android:inputType="numberSigned"
-                        android:textAlignment="inherit"
-                        android:numeric="signed"
-                        android:gravity="center"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
-                        android:autoText="false"
-                        android:textColor="@color/colorBlack"
-                        android:maxLength="6" />
-                    <TextView
-                        android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:background="@color/colorGreen"
-                        android:text="@string/text_defaultZero"
-                        android:id="@+id/ko_RENDPT"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:layout_marginRight="2dp" />
-                    <TextView
-                        android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:background="@color/colorYellow"
-                        android:text="@string/text_ROT"
-                        android:gravity="center" />
-                    <TextView
-                        android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:background="@color/colorYellow"
-                        android:text="@string/text_defaultZero"
-                        android:id="@+id/text_RENDPT_ROT"
-                        android:gravity="center"
-                        android:textStyle="bold" />
                 </TableRow>
                 <!-- A_END_PT sor: -->
                 <TableRow
@@ -602,7 +539,7 @@
                     android:minHeight="30dp"
                     android:layout_gravity="center"
                     android:baselineAligned="false"
-                    android:layout_marginBottom="3dp">
+                    android:layout_marginBottom="1dp">
                     <TextView
                         android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -621,7 +558,6 @@
                         android:id="@+id/edit_AENDPT"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
@@ -642,6 +578,67 @@
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
                         android:layout_weight="1"
+                        android:background="@color/colorYellow"
+                        android:text="@string/text_ROT"
+                        android:gravity="center" />
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorYellow"
+                        android:text="@string/text_defaultZero"
+                        android:id="@+id/text_AENDPT_ROT"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </TableRow>
+                <!-- R_END_PT sor: -->
+                <TableRow
+                    android:weightSum="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TableRow_RENDPT"
+                    android:minHeight="30dp"
+                    android:layout_gravity="center"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="3dp">
+                    <TextView
+                        android:layout_weight="2"
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorGrey"
+                        android:text="@string/text_RENDPT"
+                        android:gravity="center"
+                        android:textColor="#CCCCCC" />
+                    <EditText
+                        android:layout_height="fill_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:background="@color/colorWhite"
+                        android:id="@+id/edit_RENDPT"
+                        android:inputType="numberSigned"
+                        android:textAlignment="inherit"
+                        android:gravity="center"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:autoText="false"
+                        android:textColor="@color/colorBlack"
+                        android:maxLength="6" />
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorGreen"
+                        android:text="@string/text_defaultZero"
+                        android:id="@+id/ko_RENDPT"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginRight="2dp" />
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:background="@color/colorOrange"
                         android:text="@string/text_ROT"
                         android:gravity="center" />
@@ -651,7 +648,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorOrange"
                         android:text="@string/text_defaultZero"
-                        android:id="@+id/text_AENDPT_ROT"
+                        android:id="@+id/text_RENDPT_ROT"
                         android:gravity="center"
                         android:textStyle="bold" />
                 </TableRow>
@@ -683,7 +680,6 @@
                         android:id="@+id/edit_ARAMPEO"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
@@ -745,7 +741,6 @@
                         android:id="@+id/edit_ARAMPEU"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
@@ -807,7 +802,6 @@
                         android:id="@+id/edit_RRAMPEO"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
@@ -869,7 +863,6 @@
                         android:id="@+id/edit_RRAMPEU"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
@@ -931,7 +924,6 @@
                         android:id="@+id/edit_M12Y"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
@@ -993,7 +985,6 @@
                         android:id="@+id/edit_M12Z"
                         android:inputType="numberSigned"
                         android:textAlignment="inherit"
-                        android:numeric="signed"
                         android:gravity="center"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
