@@ -589,7 +589,7 @@ public class MainActivity extends ActionBarActivity {
         value_TRANS = (0 + value_Elforgatott_atlag) * 2;
         text_TRANS.setText(String.valueOf(String.format("%.03f", value_TRANS)));
 
-        ko_L1.setText(String.format("%.03f", (value_L[0] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) / 2 - value_TRANS / 2 ));
+        ko_L1.setText(String.format("%.03f", (value_L[0] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
         ko_L2.setText(String.format("%.03f", (value_L[1] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
         ko_L3.setText(String.format("%.03f", (value_L[2] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
 
