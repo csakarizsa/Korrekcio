@@ -549,15 +549,15 @@ public class MainActivity extends ActionBarActivity {
     {
         value_eredeti_atlag = 0.000f;
         value_ROT = 0.000f;
-        value_eredeti_atlag = (value_atlag_R - value_atlag_L) / 2;
+        value_eredeti_atlag = (value_atlag_R - value_atlag_L);
         text_eredeti_atlag.setText(String.valueOf(String.format("%.03f", value_eredeti_atlag)));
         if(value_eredeti_atlag<0)
         {
-            value_ROT = (0 - (value_eredeti_atlag)) * 2;
+            value_ROT = (0 - (value_eredeti_atlag));
         }
         else
         {
-            value_ROT = (0 - value_eredeti_atlag) * 2;
+            value_ROT = (0 - value_eredeti_atlag);
         }
         text_ROT.setText(String.valueOf(String.format("%.03f", value_ROT)));
     }
@@ -589,12 +589,14 @@ public class MainActivity extends ActionBarActivity {
         value_TRANS = (0 + value_Elforgatott_atlag) * 2;
         text_TRANS.setText(String.valueOf(String.format("%.03f", value_TRANS)));
 
-        ko_L1.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_bal[0] - value_TRANS) / 2)));
-        ko_L2.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_bal[1] - value_TRANS) / 2)));
-        ko_L3.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_bal[2] - value_TRANS) / 2)));
-        ko_R1.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_jobb[0] - value_TRANS) / 2)));
-        ko_R2.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_jobb[1] - value_TRANS) / 2)));
-        ko_R3.setText(String.valueOf(String.format("%.03f", (value_Elforgatott_jobb[2] - value_TRANS) / 2)));
+        ko_L1.setText(String.format("%.03f", (value_L[0] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) / 2 - value_TRANS / 2 ));
+        ko_L2.setText(String.format("%.03f", (value_L[1] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
+        ko_L3.setText(String.format("%.03f", (value_L[2] / 1000 + (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
+
+        ko_R1.setText(String.format("%.03f", (value_R[0] / 1000 - (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
+        ko_R2.setText(String.format("%.03f", (value_R[1] / 1000 - (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
+        ko_R3.setText(String.format("%.03f", (value_R[2] / 1000 - (((value_R[0] + value_R[1] + value_R[2]) / (3 * 1000)) - ((value_L[0] + value_L[1] + value_L[2]) / (3 * 1000))) / 2) - value_TRANS / 2 ));
+
     }
 
 }
